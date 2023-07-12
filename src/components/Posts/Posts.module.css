@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: center;
+    border-color: rgb(0, 0, 0);
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+.posts {
+    width: 72.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 32px;
+    row-gap: 48px;
+}
+
+.post {
+    width: 22.5rem;
+    height: 28.6875rem;
+}
