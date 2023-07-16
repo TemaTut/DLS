@@ -1,16 +1,21 @@
 .container {
-    display: flex;
-    justify-content: center;
-    border-color: white;
-}
-
-.header {
-    position: relative;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 70.5rem;
+    max-width: 1160px;
+    border-color: white;
+    padding-bottom: 3rem;
+}
+
+.header {
+    margin: 0 auto;
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
     font-family: Roboto;
     font-size: 16px;
     line-height: 16px;
@@ -19,10 +24,84 @@
 
 .logo {
     padding: 1.4rem 0;
-    margin-bottom: 0.1rem;
 }
 
-.search {
+.nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    border-top: 0.0625rem solid #e9e9e9;
+    border-bottom: 0.0625rem solid #e9e9e9;
+    margin-right: -0.7rem;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.4rem 0rem;
+    list-style-type: none;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+    width: 100%;
+}
+
+.nav__item {
+    position: relative;
+    display: flex;
+    gap: 0.25rem;
+}
+
+.nav__item::after {
+    content: url("../../source/img/path.png");
+}
+
+.nav__item:hover {
+    cursor: pointer;
+}
+
+.nav__item:hover .submenu {
+    display: flex;
+}
+
+.submenu {
+    display: none;
+    flex-direction: column;
     position: absolute;
-    right: -1rem;
+    top: 2.5rem;
+    padding: 0.8125rem 1.2rem;
+    background-color: white;
+    border: 0.0625rem solid #e9e9e9;
+    gap: 0.5rem;
+}
+
+.submenu__item {
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    width: 8.5rem;
+    border-bottom: 0.0625rem solid #e9e9e9;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    line-height: 1.3125rem;
+}
+
+.submenu__item::after {
+    content: url("../../source/img/pathLeft.png");
+}
+
+/* Laptop */
+
+/* Animation */
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }

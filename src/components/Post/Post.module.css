@@ -7,3 +7,12 @@
 .container:nth-child(4) {
     height: 30.5625rem;
 }
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
