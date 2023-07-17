@@ -96,10 +96,16 @@
     .post {
         justify-content: center;
         align-items: center;
-        width: 335px;
+        /* width: 335px; */
     }
 
     .post__img {
         height: 230px;
+    }
+}
+
+@media (max-width: 660px) {
+    .post {
+        width: 335px;
     }
 }

@@ -32,12 +32,12 @@
 .burgerLineActive {
     position: relative;
     width: 100%;
-    height: 3px;
+    top: 0;
     right: -70vw;
     background-color: #000000;
     transform-origin: center;
     transition: transform 0.6s ease, right 0.6s ease;
-    z-index: 1;
+    z-index: 2;
     animation: slideRight 0.6s ease;
 }
 
@@ -53,7 +53,25 @@
     transform: translateY(-8px) rotate(-45deg);
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+    pointer-events: none;
+    transition: background-color 0.6s ease;
+}
+
+.overlayVisible {
+    background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: auto;
+}
+
 .logo__wrapper {
+    margin-top: 0.5rem;
     position: relative;
     padding-bottom: 1.5rem;
 }
@@ -70,11 +88,11 @@
 
 .nav__list {
     position: absolute;
-    top: 0;
+    top: -2vh;
     display: flex;
     flex-direction: column;
     left: -180vw;
-    width: 320px;
+    width: 80vw;
     height: 100vh;
     list-style: none;
     padding-top: 2rem;
@@ -82,6 +100,7 @@
     margin: 0;
     transition: left 0.6s ease;
     background-color: white;
+    z-index: 1;
 }
 
 .nav__item {
@@ -139,8 +158,10 @@
 }
 
 .open {
-    left: 0;
+    left: -5vw;
 }
+
+/* Adaptive */
 
 @media (max-width: 768px) {
     .navigation {

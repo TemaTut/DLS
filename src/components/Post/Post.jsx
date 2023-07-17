@@ -1,4 +1,3 @@
-// Post.jsx
 import React from "react";
 import cl from "./Post.module.css";
 
@@ -6,7 +5,7 @@ const Post = ({ post, className }) => {
     const { title, img, tags, autor, date, views, text, isVisible } = post;
 
     if (!isVisible) {
-        return null; // Если isVisible равно false, компонент не будет рендериться
+        return null;
     }
 
     return (

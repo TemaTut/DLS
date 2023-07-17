@@ -5,6 +5,7 @@ import "./styles/main.css";
 
 import Header from "./components/Header/Header";
 import Posts from "./components/Posts/Posts";
+import Nav from "./components/Nav/Nav";
 
 function App() {
     const [inputOverflow, setInputOverflow] = useState("hidden");
@@ -18,6 +19,7 @@ function App() {
     return (
         <div className="root">
             <Header onSearchButtonClick={handleSearchButtonClick} />
+            <Nav />
             <Posts inputOverflow={inputOverflow} />
         </div>
     );
