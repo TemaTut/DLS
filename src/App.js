@@ -1,8 +1,8 @@
 import { useState } from "react";
 import React from "react";
+
 import Header from "./components/Header/Header";
 import Posts from "./components/Posts/Posts";
-import "./style/main.css";
 
 function App() {
     const [inputOverflow, setInputOverflow] = useState("hidden");
