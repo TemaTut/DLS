@@ -1,8 +1,8 @@
+// Posts.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
-import cl from "./Posts.module.css";
 import Post from "../Post/Post";
+import cl from "./Posts.module.css";
 
 const Posts = ({ inputOverflow }) => {
     const [posts, setPosts] = useState([]);
@@ -12,7 +12,12 @@ const Posts = ({ inputOverflow }) => {
         axios
             .get("https://cloud.codesupply.co/endpoint/react/data.json")
             .then((response) => {
-                setPosts(response.data);
+                setPosts(
+                    response.data.map((post) => ({
+                        ...post,
+                        isVisible: true,
+                    }))
+                );
             })
             .catch((error) => {
                 console.error("Error: Посты не найдены!", error);
@@ -21,12 +26,17 @@ const Posts = ({ inputOverflow }) => {
 
     const handleSearchChange = (event) => {
         setSearchQuery(event.target.value);
-    };
+        const query = event.target.value.toLowerCase();
 
-    const filteredPosts = posts.filter((post) => {
-        const searchContent = post.title.toLowerCase() + post.text.toLowerCase();
-        return searchContent.includes(searchQuery.toLowerCase());
-    });
+        setPosts((prevPosts) =>
+            prevPosts.map((post) => {
+                const searchContent = post.title.toLowerCase() + post.text.toLowerCase();
+                const isVisible = searchContent.includes(query);
+
+                return { ...post, isVisible };
+            })
+        );
+    };
 
     return (
         <div className={cl.container}>
@@ -40,8 +50,8 @@ const Posts = ({ inputOverflow }) => {
             />
 
             <div className={cl.posts}>
-                {filteredPosts.map((post) => (
-                    <Post key={post.title} post={post} />
+                {posts.map((post) => (
+                    <Post key={post.title} post={post} className={post.isVisible ? cl.added : cl.removed} />
                 ))}
             </div>
         </div>

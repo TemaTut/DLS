@@ -10,7 +10,7 @@
     font-size: 16px;
     line-height: 16px;
     font-weight: 500;
-    z-index: -1;
+    z-index: 0;
 }
 
 .input {
@@ -37,32 +37,44 @@
     }
 }
 
-.slideDown {
-    animation: slideDown 0.5s;
-}
-
-.slideUp {
-    animation: slideUp 0.5s;
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
+@media (max-width: 768px) {
+    .container {
+        padding: 0;
+        padding-top: 0.5rem;
     }
-    to {
-        transform: translateY(0);
+
+    .posts {
+        row-gap: 1rem;
+    }
+}
+
+/* Animation */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        height: 0;
+        padding: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        height: 0;
+        padding: 0;
+    }
+    100% {
         opacity: 1;
     }
 }
 
-@keyframes slideUp {
-    from {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
+.removed {
+    animation: fadeOut 0.8s ease forwards;
+}
+
+.added {
+    animation: fadeIn 0.8s ease forwards;
 }

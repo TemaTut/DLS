@@ -2,6 +2,13 @@
     visibility: hidden;
     margin-right: auto;
     margin: 0;
+    z-index: 1;
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
 }
 
 .burgerIcon {
@@ -9,9 +16,10 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 30px;
+    width: 25px;
     height: 20px;
     cursor: pointer;
+    transition: transform 0.6s ease;
 }
 
 .burgerLine {
@@ -22,12 +30,15 @@
 }
 
 .burgerLineActive {
+    position: relative;
     width: 100%;
     height: 3px;
+    right: -70vw;
     background-color: #000000;
     transform-origin: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s ease, right 0.6s ease;
     z-index: 1;
+    animation: slideRight 0.6s ease;
 }
 
 .burgerLineActive:nth-child(1) {
@@ -42,6 +53,21 @@
     transform: translateY(-8px) rotate(-45deg);
 }
 
+.logo__wrapper {
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.logo__wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+    width: 120%;
+    height: 1px;
+    background-color: #e9e9e9;
+}
+
 .nav__list {
     position: absolute;
     top: 0;
@@ -50,8 +76,66 @@
     left: -180vw;
     width: 320px;
     height: 100vh;
+    list-style: none;
+    padding-top: 2rem;
+    padding-left: 1.25rem;
+    margin: 0;
     transition: left 0.6s ease;
     background-color: white;
+}
+
+.nav__item {
+    position: relative;
+    padding: 1rem 0;
+    margin: 0 1.25rem 0 0.25rem;
+    display: flex;
+    gap: 0.25rem;
+}
+
+.nav__item::after {
+    margin-right: 0.25rem;
+    content: url("../../source/img/path.png");
+}
+
+.nav__item::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e9e9e9;
+}
+
+.nav__item:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e9e9e9;
+}
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    padding: 1.4rem 1.2rem 0.6rem 1.2rem;
+    gap: 0.5rem;
+    z-index: 1;
+    list-style: none;
+    transition: all 0.6s ease;
+}
+
+.submenu * {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid gray;
+}
+
+.nav__item:hover .submenu,
+.submenu__item:hover .submenu,
+.submenu:hover {
+    display: block;
+    color: gray;
+    font-size: large;
 }
 
 .open {
@@ -61,5 +145,16 @@
 @media (max-width: 768px) {
     .navigation {
         visibility: visible;
+    }
+}
+
+/* Animation */
+
+@keyframes slideRight {
+    from {
+        right: 0;
+    }
+    to {
+        right: -70vw;
     }
 }
