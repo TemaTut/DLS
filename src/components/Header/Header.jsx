@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+
 import Burger from "../Burger/Burger";
-import cl from "./Header.module.css";
+
 import search from "../../source/img/w.png";
 import logo from "../../source/img/logo.png";
 import logoMobile from "../../source/img/logoMobile.png";
+import cl from "./Header.module.css";
 
 const Header = ({ onSearchButtonClick }) => {
     const [logoSrc, setLogoSrc] = useState(logo);

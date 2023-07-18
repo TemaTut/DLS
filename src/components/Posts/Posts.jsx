@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
 import Post from "../Post/Post";
+
 import cl from "./Posts.module.css";
 
 const Posts = ({ inputOverflow }) => {

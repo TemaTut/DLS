@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+
 import subMenuItems from "../../constants/subMenuItems";
 import navItems from "../../constants/navItems";
+
 import logoMobile from "../../source/img/logoMobile.png";
 import cl from "./Burger.module.css";
 
@@ -44,6 +46,7 @@ const Burger = () => {
                     <span className={`${cl.burgerLine} ${isOpen ? cl.burgerLineActive : ""}`}></span>
                     <span className={`${cl.burgerLine} ${isOpen ? cl.burgerLineActive : ""}`}></span>
                 </div>
+
                 <div className={`${cl.overlay} ${isOpen ? cl.overlayVisible : ""}`} onClick={toggleMenu}></div>
 
                 <ul className={`${cl.nav__list} ${isOpen ? cl.open : ""}`}>
