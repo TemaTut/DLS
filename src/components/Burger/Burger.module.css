@@ -159,12 +159,6 @@
     }
 }
 
-@media (max-width: 455px) {
-    .navigation {
-        padding-left: 1.25rem;
-    }
-}
-
 /* Animation */
 
 @keyframes slideRight {
