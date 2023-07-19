@@ -52,7 +52,7 @@ const Posts = ({ inputOverflow }) => {
 
             <div className={cl.posts}>
                 {posts.map((post) => (
-                    <Post key={post.title} post={post} className={post.isVisible ? cl.added : cl.removed} />
+                    <Post key={post.title} post={post} />
                 ))}
             </div>
         </div>
