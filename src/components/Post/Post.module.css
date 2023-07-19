@@ -4,7 +4,6 @@
     gap: 1rem;
     width: 22.5rem;
     height: 28.6875rem;
-    /* z-index: -1; */
 }
 
 .post:nth-child(4) {
@@ -42,27 +41,15 @@
 .post__meta {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3125rem;
     font-family: Roboto;
     font-weight: 500;
     font-size: 0.75rem;
     line-height: 0.75rem;
 }
 
-.post__author {
-    position: relative;
-}
-
-.post__author:not(:last-child)::before {
-    content: "";
-    position: absolute;
-    width: 0.1875rem;
-    height: 0.1875rem;
-    border-radius: 50%;
-    background-color: #d7d7d7;
-    top: 50%;
-    transform: translateY(-50%);
-    right: -0.3175rem;
+.post_dot {
+    display: flex;
 }
 
 .post__date {
@@ -83,6 +70,7 @@
 
 .post__description {
     margin: 0;
+    margin-top: 0.1rem;
     margin-left: -0.0625rem;
     color: #929292;
     font-family: Roboto;

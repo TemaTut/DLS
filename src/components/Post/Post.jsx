@@ -25,7 +25,17 @@ const Post = ({ post, className }) => {
                     <h2 className={cl.post__title}>{title}</h2>
                     <div className={cl.post__meta}>
                         <span className={cl.post__author}>{autor}</span>
+                        <div className={cl.post_dot}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="3" height="4" viewBox="0 0 3 4" fill="none">
+                                <circle cx="1.5" cy="2" r="1.5" fill="#D7D7D7" />
+                            </svg>
+                        </div>
                         <span className={cl.post__date}>{date}</span>
+                        <div className={cl.post_dot}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="3" height="4" viewBox="0 0 3 4" fill="none">
+                                <circle cx="1.5" cy="2" r="1.5" fill="#D7D7D7" />
+                            </svg>
+                        </div>
                         <span className={cl.post__views}>{views} Views</span>
                     </div>
                     <p className={cl.post__description}>{text}</p>
