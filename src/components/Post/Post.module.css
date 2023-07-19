@@ -3,11 +3,6 @@
     flex-direction: column;
     gap: 1rem;
     width: 22.5rem;
-    height: 28.6875rem;
-}
-
-.post:nth-child(4) {
-    height: 30.5625rem;
 }
 
 .post__img {
@@ -22,6 +17,7 @@
 }
 
 .post__tags {
+    margin-top: -0.0725rem;
     color: #eb0028;
     font-family: Roboto;
     font-weight: 700;

@@ -23,7 +23,7 @@
 
 .posts {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     column-gap: 2rem;
     row-gap: 3rem;
@@ -31,17 +31,26 @@
 
 /* Laptop */
 
+@media (max-width: 1440px) {
+    .posts {
+        justify-content: center;
+        column-gap: 2.05rem;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0;
         padding-top: 0.5rem;
     }
 
-    .posts {
+    /* .posts {
         row-gap: 1rem;
-    }
+    } */
 
     .input {
+        font-size: 0.75rem;
+        border-radius: 0.75rem;
         top: -1.5rem;
     }
 }

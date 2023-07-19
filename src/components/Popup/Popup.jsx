@@ -5,8 +5,12 @@ import cl from "./Popup.module.css";
 const Popup = ({ post, onClose }) => {
     const { title, text } = post;
 
+    const handleCloseClick = () => {
+        onClose();
+    };
+
     return (
-        <div className={cl.overlay} onClick={onClose}>
+        <div className={cl.overlay} onClick={handleCloseClick}>
             <div className={cl.popup} onClick={(e) => e.stopPropagation()}>
                 <button className={cl.closeBtn} onClick={onClose}>
                     Закрыть
